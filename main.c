@@ -20,30 +20,17 @@ void hwInit(void)
 	return;
 }	
 
-void showRC5Buf(uint16_t buf)
-{
-	int8_t i;
-	
-	GPIO1 = 0;
-	for (i = 13; i >= 0; i--) {
-		if (buf & (1<<i)) {
-			GPIO1 = 1;
-		} else {
-			GPIO1 = 0;
-		}	
-		__delay_us(200);
-	}
-	GPIO1 = 0;
-}	
-
 int main (void){
 
 	hwInit();
-
-	uint16_t rc5Buf;
+	
+	uint16_t rc5Buf, rc5Last;
 
 	while(1) {
 		rc5Buf = getRC5RawBuf();
-		showRC5Buf(rc5Buf);
+		if (rc5Buf != RC5_BUF_EMPTY)
+			rc5Last = rc5Buf;
+		
+		showHex(rc5Last);
 	}	
 }	

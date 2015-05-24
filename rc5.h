@@ -25,6 +25,7 @@ typedef enum {
 	STATE_END     // 6
 } rc5State;
 
+void showHex(uint16_t num);
 void rc5Init(void);
 
 uint16_t getRC5RawBuf(void);

@@ -6,6 +6,7 @@
 *.map
 *.mcp
 *.mcw
+*.mcs
 *.obj
 *.rlf
 *.pre
