@@ -1,0 +1,17 @@
+*.as
+*.cof
+*.hex
+*.hxl
+*.lst
+*.map
+*.mcp
+*.mcw
+*.obj
+*.rlf
+*.pre
+*.p1
+*.sdb
+*.sym
+funclist
+
+  

@@ -40,12 +40,9 @@ int main (void){
 
 	hwInit();
 
-	GPIO0 = 0;
-
 	uint16_t rc5Buf;
 
 	while(1) {
-		__delay_ms(200);
 		rc5Buf = getRC5RawBuf();
 		showRC5Buf(rc5Buf);
 	}	

@@ -49,8 +49,6 @@ void rc5Init(void)
 
 void interrupt rc5 (void)
 {
-	GPIO0 = 1;
-
 	uint16_t delay;
 	delay = (TMR1H << 8);
 	delay |= TMR1L;
@@ -76,7 +74,6 @@ void interrupt rc5 (void)
 		TMR1H = 0x00;
  		TMR1L = 0x00;					
 
-		GPIO0 = 0;
 		GPIF = 0;
 		return;
 	}
@@ -105,7 +102,6 @@ void interrupt rc5 (void)
 	TMR1H = 0x00;
  	TMR1L = 0x00;
 
-	GPIO0 = 0;
 	GPIF = 0;
 	return;
 } 
